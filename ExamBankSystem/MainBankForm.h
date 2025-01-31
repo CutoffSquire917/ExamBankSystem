@@ -18,12 +18,12 @@ namespace ExamBankSystem {
 	using namespace System::Drawing;
 
 	/// <summary>
-	/// Сводка для MyForm
+	/// Сводка для MainBankForm
 	/// </summary>
-	public ref class MyForm : public System::Windows::Forms::Form
+	public ref class MainBankForm : public System::Windows::Forms::Form
 	{
 	public:
-		MyForm(void)
+		MainBankForm(void)
 		{
 			InitializeComponent();
 			//
@@ -35,7 +35,7 @@ namespace ExamBankSystem {
 		/// <summary>
 		/// Освободить все используемые ресурсы.
 		/// </summary>
-		~MyForm()
+		~MainBankForm()
 		{
 			if (components)
 			{
@@ -122,7 +122,7 @@ namespace ExamBankSystem {
 		/// </summary>
 		void InitializeComponent(void)
 		{
-			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(MyForm::typeid));
+			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(MainBankForm::typeid));
 			this->btn_close = (gcnew System::Windows::Forms::Button());
 			this->card_panel = (gcnew System::Windows::Forms::Panel());
 			this->card_secret_number = (gcnew System::Windows::Forms::Label());
@@ -172,7 +172,7 @@ namespace ExamBankSystem {
 			this->btn_close->TabIndex = 0;
 			this->btn_close->Text = L"⨉";
 			this->btn_close->UseVisualStyleBackColor = false;
-			this->btn_close->Click += gcnew System::EventHandler(this, &MyForm::btn_close_Click);
+			this->btn_close->Click += gcnew System::EventHandler(this, &MainBankForm::btn_close_Click);
 			// 
 			// card_panel
 			// 
@@ -243,7 +243,7 @@ namespace ExamBankSystem {
 			this->btn_next_card->TabIndex = 2;
 			this->btn_next_card->Text = L"->";
 			this->btn_next_card->UseVisualStyleBackColor = false;
-			this->btn_next_card->Click += gcnew System::EventHandler(this, &MyForm::btn_next_card_Click);
+			this->btn_next_card->Click += gcnew System::EventHandler(this, &MainBankForm::btn_next_card_Click);
 			// 
 			// background_card
 			// 
@@ -277,7 +277,7 @@ namespace ExamBankSystem {
 			this->btn_prev_card->Text = L"<-";
 			this->btn_prev_card->UseVisualStyleBackColor = false;
 			this->btn_prev_card->Visible = false;
-			this->btn_prev_card->Click += gcnew System::EventHandler(this, &MyForm::btn_prev_card_Click);
+			this->btn_prev_card->Click += gcnew System::EventHandler(this, &MainBankForm::btn_prev_card_Click);
 			// 
 			// btn_other
 			// 
@@ -525,9 +525,9 @@ namespace ExamBankSystem {
 			this->btn_all_history->TabIndex = 7;
 			this->btn_all_history->Text = L"All ->";
 			this->btn_all_history->UseVisualStyleBackColor = false;
-			this->btn_all_history->Click += gcnew System::EventHandler(this, &MyForm::btn_all_history_Click);
+			this->btn_all_history->Click += gcnew System::EventHandler(this, &MainBankForm::btn_all_history_Click);
 			// 
-			// MyForm
+			// MainBankForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
@@ -541,11 +541,11 @@ namespace ExamBankSystem {
 			this->Controls->Add(this->background_card);
 			this->Controls->Add(this->background_cost_history);
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
-			this->Name = L"MyForm";
+			this->Name = L"MainBankForm";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
-			this->Text = L"MyForm";
+			this->Text = L"MainBankForm";
 			this->WindowState = System::Windows::Forms::FormWindowState::Minimized;
-			this->Load += gcnew System::EventHandler(this, &MyForm::MyForm_Load);
+			this->Load += gcnew System::EventHandler(this, &MainBankForm::MainBankForm_Load);
 			this->card_panel->ResumeLayout(false);
 			this->card_panel->PerformLayout();
 			this->background_card->ResumeLayout(false);
@@ -559,7 +559,7 @@ namespace ExamBankSystem {
 
 		}
 #pragma endregion
-	private: System::Void MyForm_Load(System::Object^ sender, System::EventArgs^ e) {
+	private: System::Void MainBankForm_Load(System::Object^ sender, System::EventArgs^ e) {
 		if (CreditCardList->GetSize() != 0) {
 			CardChanging();
 		}
@@ -753,7 +753,10 @@ namespace ExamBankSystem {
 	private: System::Void btn_all_history_Click(System::Object^ sender, System::EventArgs^ e) {
 		this->Hide();
 		CostAllList^ newForm = gcnew CostAllList();
-		newForm->Show();
+		newForm->ShowDialog();
+		if (Application::OpenForms->Count > 0) {
+			this->Show();
+		}
 	}
 };
 

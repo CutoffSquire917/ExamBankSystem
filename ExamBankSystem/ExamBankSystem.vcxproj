@@ -134,7 +134,7 @@
     </ClInclude>
     <ClInclude Include="CostHistory.h" />
     <ClInclude Include="CreditCard.h" />
-    <ClInclude Include="MyForm.h">
+    <ClInclude Include="MainBankForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="Node.h" />
@@ -144,8 +144,8 @@
     <EmbeddedResource Include="CostAllList.resx">
       <DependentUpon>CostAllList.h</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MyForm.resx">
-      <DependentUpon>MyForm.h</DependentUpon>
+    <EmbeddedResource Include="MainBankForm.resx">
+      <DependentUpon>MainBankForm.h</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

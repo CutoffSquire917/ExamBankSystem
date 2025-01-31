@@ -1,7 +1,7 @@
 #include <iostream>
 #include <string>
 #include <fstream>
-#include "MyForm.h"
+#include "MainBankForm.h"
 #include <Windows.h>
 #include "MyQueue.h"
 
@@ -184,7 +184,7 @@ int main(array<String^>^ args) {
 
 	Application::SetCompatibleTextRenderingDefault(false);
 	Application::EnableVisualStyles();
-	ExamBankSystem::MyForm form;
+	ExamBankSystem::MainBankForm form;
 	Application::Run(% form);
 
 	

@@ -1,6 +1,7 @@
 ﻿#pragma once
 
 #include "MyQueue.h"
+//#include "MainBankForm.h"
 #include <iostream>
 #include <string>
 extern MyQueue<CreditCard>* CreditCardList;
@@ -57,6 +58,7 @@ namespace ExamBankSystem {
 		static_cast<System::Int32>(static_cast<System::Byte>(23)),
 		static_cast<System::Int32>(static_cast<System::Byte>(23)),
 		static_cast<System::Int32>(static_cast<System::Byte>(23)));
+	private: System::Windows::Forms::Button^ btn_return;
 
 
 
@@ -85,6 +87,7 @@ namespace ExamBankSystem {
 			this->background_cost_history = (gcnew System::Windows::Forms::Panel());
 			this->panel5 = (gcnew System::Windows::Forms::Panel());
 			this->btn_all_history = (gcnew System::Windows::Forms::Button());
+			this->btn_return = (gcnew System::Windows::Forms::Button());
 			this->panel5->SuspendLayout();
 			this->SuspendLayout();
 			// 
@@ -144,6 +147,25 @@ namespace ExamBankSystem {
 			this->btn_all_history->Text = L"All ->";
 			this->btn_all_history->UseVisualStyleBackColor = false;
 			// 
+			// btn_return
+			// 
+			this->btn_return->AutoSizeMode = System::Windows::Forms::AutoSizeMode::GrowAndShrink;
+			this->btn_return->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(20)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
+				static_cast<System::Int32>(static_cast<System::Byte>(20)));
+			this->btn_return->Cursor = System::Windows::Forms::Cursors::Hand;
+			this->btn_return->FlatAppearance->BorderSize = 0;
+			this->btn_return->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->btn_return->Font = (gcnew System::Drawing::Font(L"Candara", 14, System::Drawing::FontStyle::Bold));
+			this->btn_return->ForeColor = System::Drawing::SystemColors::ButtonFace;
+			this->btn_return->Location = System::Drawing::Point(520, 0);
+			this->btn_return->Margin = System::Windows::Forms::Padding(0);
+			this->btn_return->Name = L"btn_return";
+			this->btn_return->Size = System::Drawing::Size(100, 40);
+			this->btn_return->TabIndex = 8;
+			this->btn_return->Text = L"<-";
+			this->btn_return->UseVisualStyleBackColor = false;
+			this->btn_return->Click += gcnew System::EventHandler(this, &CostAllList::btn_return_Click);
+			// 
 			// CostAllList
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
@@ -151,12 +173,13 @@ namespace ExamBankSystem {
 			this->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(57)), static_cast<System::Int32>(static_cast<System::Byte>(62)),
 				static_cast<System::Int32>(static_cast<System::Byte>(66)));
 			this->ClientSize = System::Drawing::Size(720, 1000);
+			this->Controls->Add(this->btn_return);
 			this->Controls->Add(this->panel5);
 			this->Controls->Add(this->btn_close);
 			this->Controls->Add(this->background_cost_history);
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
 			this->Name = L"CostAllList";
-			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
+			this->StartPosition = System::Windows::Forms::FormStartPosition::Manual;
 			this->Text = L"CostAllList";
 			this->WindowState = System::Windows::Forms::FormWindowState::Minimized;
 			this->Load += gcnew System::EventHandler(this, &CostAllList::CostAllList_Load);
@@ -309,6 +332,9 @@ namespace ExamBankSystem {
 
 	private: System::Void btn_close_Click(System::Object^ sender, System::EventArgs^ e) {
 		Application::Exit();
+	}
+	private: System::Void btn_return_Click(System::Object^ sender, System::EventArgs^ e) {
+		this->Close();
 	}
 };
 
