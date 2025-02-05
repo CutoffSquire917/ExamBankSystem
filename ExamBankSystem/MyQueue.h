@@ -30,7 +30,35 @@ public:
 		}
 		size++;
 	}
-	T GetValue(size_t const index) {
+	void DeleteByIndex(const size_t index) {
+		if (index < 0 || index >= this->size) {
+			throw std::out_of_range("Index out of the range");
+		}
+		else if (index == 0 && this->size == 1) {
+			head = nullptr;
+			last = nullptr;
+			size--;
+			return;
+		}
+		else if (index == this->size - 1) {
+			Node<T>* temp = last;
+			last = last->GetPrev();
+			last->SetNext(nullptr);
+			delete temp;
+			size--;
+			return;
+		}
+		Node<T>* temp = head;
+		for (size_t i = 0; i < index; i++)
+		{
+			temp = temp->GetNext();
+		}
+		temp->GetPrev()->SetNext(temp->GetNext());
+		temp->GetPrev()->SetPrev(temp->GetPrev());
+		delete temp;
+		size--;
+	}
+	T& GetValue(const size_t index) {
 		if (index < 0 || index >= size) {
 			throw std::runtime_error("index out of the range");
 		}

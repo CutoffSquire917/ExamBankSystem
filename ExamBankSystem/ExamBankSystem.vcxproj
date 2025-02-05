@@ -120,32 +120,67 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="CostAllList.cpp" />
+    <ClCompile Include="CostAllForm.cpp" />
     <ClCompile Include="CostHistory.cpp" />
+    <ClCompile Include="CostReportForm.cpp" />
     <ClCompile Include="CreditCard.cpp" />
     <ClCompile Include="MyForm.cpp" />
     <ClCompile Include="Node.cpp" />
     <ClCompile Include="MyQueue.cpp" />
+    <ClCompile Include="OnlineShopForm.cpp" />
+    <ClCompile Include="ReceivingForm.cpp" />
     <ClCompile Include="Source.cpp" />
+    <ClCompile Include="TopCostsForm.cpp" />
+    <ClCompile Include="TransactionForm.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="CostAllList.h">
+    <ClInclude Include="CostAllForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="CostHistory.h" />
+    <ClInclude Include="CostReportForm.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="CreditCard.h" />
     <ClInclude Include="MainBankForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="Node.h" />
     <ClInclude Include="MyQueue.h" />
+    <ClInclude Include="OnlineShopForm.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="ReceivingForm.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="TopCostsForm.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="TransactionForm.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="CostAllList.resx">
-      <DependentUpon>CostAllList.h</DependentUpon>
+    <EmbeddedResource Include="CostAllForm.resx">
+      <DependentUpon>CostAllForm.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CostReportForm.resx">
+      <DependentUpon>CostReportForm.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainBankForm.resx">
       <DependentUpon>MainBankForm.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OnlineShopForm.resx">
+      <DependentUpon>OnlineShopForm.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReceivingForm.resx">
+      <DependentUpon>ReceivingForm.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TopCostsForm.resx">
+      <DependentUpon>TopCostsForm.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TransactionForm.resx">
+      <DependentUpon>TransactionForm.h</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

@@ -21,7 +21,7 @@ public:
 	void SetPrev(Node<T>* prev) {
 		this->prev = prev;
 	}
-	T GetValue() {
+	T& GetValue() {
 		return value;
 	}
 

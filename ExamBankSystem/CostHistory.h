@@ -17,7 +17,9 @@ public:
 		else if (this->transfer_sum[0] == '~') {
 			this->transfer_sum.replace(0, 1, "+");
 		}
-		this->transfer_sum.replace(this->transfer_sum.find("#"), 1, ".");
+		if (this->transfer_sum.find("#") != std::string::npos) {
+			this->transfer_sum.replace(this->transfer_sum.find("#"), 1, ".");
+		}
 		for (size_t i = 2; i < 6; i += 3)
 		{
 			this->date.insert(i, ".");
