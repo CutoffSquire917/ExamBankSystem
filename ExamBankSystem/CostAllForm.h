@@ -42,15 +42,12 @@ namespace ExamBankSystem {
 			}
 		}
 	private: System::Windows::Forms::Button^ btn_close;
-
 	private: System::Windows::Forms::Panel^ background_cost_history;
 	private: System::Windows::Forms::Panel^ panel_back_front;
-
-
-
 	private: System::Windows::Forms::Button^ btn_return;
-
-
+	private: System::Windows::Forms::Panel^ panel_move_form;
+	private: System::Windows::Forms::Label^ label_name_form;
+	private: System::Windows::Forms::Panel^ image_bank_logo;
 
 	private: bool dragging = false;
 	private: System::Drawing::Point offset;
@@ -63,17 +60,6 @@ namespace ExamBankSystem {
 		static_cast<System::Int32>(static_cast<System::Byte>(23)),
 		static_cast<System::Int32>(static_cast<System::Byte>(23)),
 		static_cast<System::Int32>(static_cast<System::Byte>(23)));
-
-	private: System::Windows::Forms::Panel^ panel_move_form;
-	private: System::Windows::Forms::Label^ label_name_form;
-	private: System::Windows::Forms::Panel^ image_bank_logo;
-
-
-
-
-
-
-
 
 	protected:
 

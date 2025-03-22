@@ -11,8 +11,6 @@ extern MyQueue<CostHistory>* CostHistoryList;
 
 namespace ExamBankSystem {
 
-
-
 	using namespace System;
 	using namespace System::ComponentModel;
 	using namespace System::Collections;

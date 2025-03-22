@@ -91,7 +91,6 @@ namespace ExamBankSystem {
 	private: System::Windows::Forms::Label^ label_name_medicine;
 	private: System::Windows::Forms::Label^ label_info;
 
-
 	private: bool dragging = false;
 	private: System::Drawing::Point offset;
 	private: size_t card_switch;
@@ -101,8 +100,6 @@ namespace ExamBankSystem {
 		String^ temp_card_number;
 		size_t temp_card_switch;
 	};
-
-
 
 	protected:
 

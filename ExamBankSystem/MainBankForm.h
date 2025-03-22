@@ -773,8 +773,6 @@ namespace ExamBankSystem {
 			   }
 		   }
 
-
-
 	private: System::Void btn_close_Click(System::Object^ sender, System::EventArgs^ e) {
 		Application::Exit();
 	}

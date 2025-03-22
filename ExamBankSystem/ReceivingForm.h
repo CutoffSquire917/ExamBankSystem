@@ -37,7 +37,6 @@ namespace ExamBankSystem {
 			//TODO: добавьте код конструктора
 			//
 		}
-
 	protected:
 		/// <summary>
 		/// Освободить все используемые ресурсы.

@@ -909,7 +909,6 @@ namespace ExamBankSystem {
 		return gcnew System::String(toString.c_str());
 	}
 
-
 	private: System::Void btn_close_Click(System::Object^ sender, System::EventArgs^ e) {
 		Application::Exit();
 	}
