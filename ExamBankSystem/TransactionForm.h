@@ -74,18 +74,14 @@ namespace ExamBankSystem {
 	private: System::Windows::Forms::Button^ btn_send;
 	private: System::Windows::Forms::Panel^ panel_card_list;
 	private: System::Windows::Forms::Label^ label_error;
+	private: System::Windows::Forms::Label^ max_card_balance;
+	private: System::Windows::Forms::Label^ label_name_form;
+	private: System::Windows::Forms::Panel^ image_bank_logo;
 
 	private: bool dragging = false;
 	private: System::Drawing::Point offset;
 	private: bool panel_card_list_visible = false;
 	private: size_t card_switch;
-	private: System::Windows::Forms::Label^ max_card_balance;
-	private: System::Windows::Forms::Label^ label_name_form;
-	private: System::Windows::Forms::Panel^ image_bank_logo;
-	private: ref struct TempCardInfo {
-		String^ temp_card_number;
-		size_t temp_card_switch;
-	};
 
 	protected:
 
@@ -568,10 +564,7 @@ namespace ExamBankSystem {
 			temp_label_card->Size = System::Drawing::Size(349, 45);
 			temp_label_card->Text = gcnew System::String(decypt(CreditCardList->GetValue(i).GetCardNumber()).c_str());
 			temp_label_card->TextAlign = System::Drawing::ContentAlignment::MiddleLeft;
-			TempCardInfo^ temp_card_info = gcnew TempCardInfo();
-			temp_card_info->temp_card_number = gcnew String(decypt(CreditCardList->GetValue(i).GetCardNumber()).c_str());
-			temp_card_info->temp_card_switch = i;
-			temp_label_card->Tag = temp_card_info;
+			temp_label_card->Tag = i;
 			temp_label_card->Click += gcnew System::EventHandler(this, &TransactionForm::label_select_card_Click);
 			this->background_cost_history->Controls->Add(temp_label_card);
 
@@ -663,13 +656,10 @@ namespace ExamBankSystem {
 		return msclr::interop::marshal_as<std::string>(const_cast<System::String^>(toString));
 	}
 	private: System::Void label_select_card_Click(System::Object^ sender, System::EventArgs^ e) {
-		TempCardInfo^ temp_card_info = dynamic_cast<TempCardInfo^>(safe_cast<Control^>(sender)->Tag);
-		String^ temp_card_number = temp_card_info->temp_card_number;
-		size_t temp_card_switch = temp_card_info->temp_card_switch;
+		this->card_switch = safe_cast<size_t>(safe_cast<Control^>(sender)->Tag);
 		
-		this->label_select_card->Text = temp_card_number;
-		this->card_number->Text = temp_card_number;
-		this->card_switch = temp_card_switch;
+		this->label_select_card->Text = LocalToString(decypt(CreditCardList->GetValue(card_switch).GetCardNumber()));
+		this->card_number->Text = LocalToString(decypt(CreditCardList->GetValue(card_switch).GetCardNumber()));
 		this->max_card_balance->Text = LocalToString(decypt(CreditCardList->GetValue(card_switch).GetCardBalance()));
 		
 		panel_card_list_visible = false;

@@ -45,69 +45,42 @@ namespace ExamBankSystem {
 		}
 	private: System::Windows::Forms::Button^ btn_close;
 	private: System::Windows::Forms::Panel^ background_daily_report;
-
 	private: System::Windows::Forms::Panel^ panel_move_form;
 	private: System::Windows::Forms::Panel^ panel_back_front;
 	private: System::Windows::Forms::Button^ btn_return;
 	private: System::Windows::Forms::Panel^ panel_daily_progress;
-
-
-
 	private: System::Windows::Forms::Label^ label_daily_reports;
 	private: System::Windows::Forms::Panel^ panel_daily_report;
-
-
 	private: System::Windows::Forms::Label^ label_for_daily_expenses;
-
 	private: System::Windows::Forms::Label^ label_daily_expenses;
 	private: System::Windows::Forms::Label^ label_daily_category;
-
 	private: System::Windows::Forms::Label^ label_for_daily_category;
 	private: System::Windows::Forms::Label^ label_daily_date;
 	private: System::Windows::Forms::Panel^ panel_weekly_report;
-
-
 	private: System::Windows::Forms::Label^ label_weekly_category;
-
 	private: System::Windows::Forms::Label^ label_for_weekly_category;
 	private: System::Windows::Forms::Label^ label_weekly_expenses;
-
-
 	private: System::Windows::Forms::Label^ label_for_weekly_expenses;
 	private: System::Windows::Forms::Panel^ panel_weekly_progress;
-
-
 	private: System::Windows::Forms::Panel^ background_weekly_report;
-
 	private: System::Windows::Forms::Label^ label_weekly_date;
 	private: System::Windows::Forms::Label^ label_weekly_reports;
 	private: System::Windows::Forms::Panel^ panel_monthy_report;
-
-
-
 	private: System::Windows::Forms::Label^ label_monthly_category;
-
 	private: System::Windows::Forms::Label^ label_for_monthly_category;
 	private: System::Windows::Forms::Label^ label_monthly_expenses;
-
-
 	private: System::Windows::Forms::Label^ label_for_monthly_expenses;
 	private: System::Windows::Forms::Panel^ panel_monthly_progress;
-
-
 	private: System::Windows::Forms::Panel^ background_monthly_report;
-
 	private: System::Windows::Forms::Label^ label_monthly_date;
-
 	private: System::Windows::Forms::Label^ label_monthly_reports;
 	private: System::Windows::Forms::Panel^ background_reports;
+	private: System::Windows::Forms::Label^ label_name_form;
+	private: System::Windows::Forms::Panel^ image_bank_logo;
 
 	private: bool dragging = false;
 	private: System::Drawing::Point offset;
 	private: size_t card_switch = 0;
-	private: System::Windows::Forms::Label^ label_name_form;
-	private: System::Windows::Forms::Panel^ image_bank_logo;
-
 
 	protected:
 
@@ -850,15 +823,6 @@ namespace ExamBankSystem {
 		file << msclr::interop::marshal_as<std::string>(label_monthly_expenses->Text) << "\t";
 		file << msclr::interop::marshal_as<std::string>(label_monthly_category->Text) << "\n";
 		file.close();
-
-
-		//std::cout << "Дата и время: "
-		//	<< local_time.tm_mday << "."
-		//	<< (local_time.tm_mon + 1) << "."
-		//	<< (local_time.tm_year + 1900) << " "
-		//	<< local_time.tm_hour << ":"
-		//	<< local_time.tm_min << ":"
-		//	<< local_time.tm_sec << std::endl;
 	}
 
 

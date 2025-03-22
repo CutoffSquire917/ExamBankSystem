@@ -553,6 +553,8 @@ namespace ExamBankSystem {
 			this->btn_buy_cinema->Text = L"Buy";
 			this->btn_buy_cinema->UseVisualStyleBackColor = false;
 			this->btn_buy_cinema->Click += gcnew System::EventHandler(this, &OnlineShopForm::btn_buy_cinema_Click);
+			this->btn_buy_cinema->MouseEnter += gcnew System::EventHandler(this, &OnlineShopForm::btn_buy_MouseEnter);
+			this->btn_buy_cinema->MouseLeave += gcnew System::EventHandler(this, &OnlineShopForm::btn_buy_MouseLeave);
 			// 
 			// label_name_cinema
 			// 
@@ -623,6 +625,8 @@ namespace ExamBankSystem {
 			this->btn_buy_entertainme->Text = L"Buy";
 			this->btn_buy_entertainme->UseVisualStyleBackColor = false;
 			this->btn_buy_entertainme->Click += gcnew System::EventHandler(this, &OnlineShopForm::btn_buy_entertainme_Click);
+			this->btn_buy_entertainme->MouseEnter += gcnew System::EventHandler(this, &OnlineShopForm::btn_buy_MouseEnter);
+			this->btn_buy_entertainme->MouseLeave += gcnew System::EventHandler(this, &OnlineShopForm::btn_buy_MouseLeave);
 			// 
 			// label_name_enterainme
 			// 
@@ -693,6 +697,8 @@ namespace ExamBankSystem {
 			this->btn_buy_medicine->Text = L"Buy";
 			this->btn_buy_medicine->UseVisualStyleBackColor = false;
 			this->btn_buy_medicine->Click += gcnew System::EventHandler(this, &OnlineShopForm::btn_buy_medicine_Click);
+			this->btn_buy_medicine->MouseEnter += gcnew System::EventHandler(this, &OnlineShopForm::btn_buy_MouseEnter);
+			this->btn_buy_medicine->MouseLeave += gcnew System::EventHandler(this, &OnlineShopForm::btn_buy_MouseLeave);
 			// 
 			// label_name_medicine
 			// 

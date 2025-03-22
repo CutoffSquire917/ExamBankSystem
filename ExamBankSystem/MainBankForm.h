@@ -1172,10 +1172,7 @@ namespace ExamBankSystem {
 			static_cast<System::Int32>(static_cast<System::Byte>(69)));
 	}
 
-	
-	
-
-};
+	};
 
 }
 
